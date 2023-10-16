@@ -4,7 +4,6 @@ import lk.ijse.spring.config.WebAppConfig;
 import lk.ijse.spring.config.WebRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import java.util.WeakHashMap;
 
 /**
  * @author : Jayani_Arunika  10/15/2023 - 4:04 PM
@@ -24,6 +23,6 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected String[] getServletMappings() {
-        return new String[0];
+        return new String[]{"/"};
     }
 }
