@@ -1,0 +1,139 @@
+body {
+    background-color: #f2f2f2;
+    /* Replace with your desired background color */
+    /*overflow: hidden;*/
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000000000;
+}
+* {
+
+    margin: 0px;
+
+    padding: 0px;
+
+    box-sizing: border-box;
+
+}
+
+.body-text {
+
+    display: flex;
+
+    font-family: "Montserrat", sans-serif;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 250px;
+
+}
+
+nav {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    min-height: 8vh;
+
+    background-color: teal;
+
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.heading {
+
+    color: white;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    font-size: 20px;
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    width: 30%;
+
+}
+
+.nav-links li {
+
+    list-style: none;
+
+}
+
+.nav-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    padding: 14px 16px;
+
+}
+
+.nav-links a:hover:not(.active) {
+
+    background-color: lightseagreen;
+
+}
+
+.nav-links li a.active {
+
+    background-color: #4caf50;
+
+}
+#bgslider {
+    overflow: hidden;
+}
+#bgslider figure {
+    position: fixed;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 30s slidy infinite;
+}
+#bgslider figure img {
+    width: 20%;
+    float: left;
+    height:100vh;
+}
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+#imgabout{
+    position: fixed;
+    left: 55%;
+}
