@@ -74,10 +74,23 @@
 <!--        <img src="images/image19.jpg" alt="Slider">-->
     </figure>
 </div>
+<!--login part-->
+<div class="blur-bg-overlay"></div>
 <div class="form-popup">
     <span class="close-btn material-symbols-rounded">close</span>
     <form action="">
         <h1>Login</h1>
+        <div class="input-box">
+<!--            <input type="password" placeholder="Password" required>-->
+<!--            <i class='bx bxs-lock-alt' ></i>-->
+            <select class="form-control" id="role_Type" name="role_Type"   >
+                <option value="RoleType">Choose Role</option>
+                <option value="ADMIN">ADMIN</option>
+                <option value="REGISTERED_USER">REGISTERED_USER</option>
+                <option value="DRIVER">DRIVER</option>
+            </select>
+        </div>
+
         <div class="input-box">
             <input type="text" placeholder="Username" required>
             <i class='bx bxs-user'></i>

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f985def-0a6f-4b89-b8c2-9bdd9ee7cd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/asessts/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/asessts/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/pages/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/pages/Home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +48,10 @@
       <recent name="E:\car_rental_system\car_Rent_Front_End\asessts\image\contact" />
       <recent name="E:\car_rental_system\car_Rent_Front_End\asessts\image\gallery" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\car_rental_system\car_Rent_Front_End\pages" />
+      <recent name="E:\car_rental_system\car_Rent_Front_End\controller" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -72,7 +76,7 @@
       <updated>1697828592355</updated>
       <workItem from="1697828595780" duration="9415000" />
       <workItem from="1697884914166" duration="15760000" />
-      <workItem from="1697982637111" duration="6777000" />
+      <workItem from="1697982637111" duration="15025000" />
     </task>
     <servers />
   </component>

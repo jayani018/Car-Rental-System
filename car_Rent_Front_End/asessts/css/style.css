@@ -108,6 +108,7 @@ nav {
 }
 #bgslider {
     overflow: hidden;
+
 }
 #bgslider figure {
     position: fixed;
@@ -328,9 +329,12 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #444;
 }
+.blur-bg-overlay{
+    backdrop-filter: blur(5px);
+}
 .form-popup {
     position: fixed;
-    top: 50%;
+    top: 56%;
     left: 50%;
     z-index: 10;
     /* width: 100%; */
@@ -343,10 +347,11 @@ button[type="submit"]:hover {
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(9px);
+    backdrop-filter: blur(50px);
     color: #fff;
     border-radius: 12px;
-    padding: 30px 40px;
+    padding: 11px 40px;
+    /*backdrop-filter: blur(5px);*/
 }
 .show-popup .form-popup {
     opacity: 1;
@@ -372,7 +377,7 @@ button[type="submit"]:hover {
 
     margin: 30px 0;
 }
-.input-box input{
+.input-box select{
     width: 100%;
     height: 100%;
     background: transparent;
@@ -381,63 +386,81 @@ button[type="submit"]:hover {
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
+    color: #f8f9fa;
+    padding: 5px 50px 6px 20px;
+    background: transparent;
+    /* position: relative; */
+
+}
+.input-box select option{
+background-color: black;
+}
+.input-box input{
+width: 100%;
+height: 100%;
+background: transparent;
+border: none;
+outline: none;
+border: 2px solid rgba(255, 255, 255, .2);
+border-radius: 40px;
+font-size: 16px;
+color: #fff;
+padding: 20px 45px 20px 20px;
 }
 .input-box input::placeholder{
-    color: #fff;
+color: #fff;
 }
 .input-box i{
-    position: absolute;
-    right: 20px;
-    top: 30%;
-    transform: translate(-50%);
-    font-size: 20px;
+position: absolute;
+right: 20px;
+top: 30%;
+transform: translate(-50%);
+font-size: 20px;
 
 }
 .form-popup .remember-forgot{
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
+display: flex;
+justify-content: space-between;
+font-size: 14.5px;
+margin: -15px 0 15px;
 }
 .remember-forgot label input{
-    accent-color: #fff;
-    margin-right: 3px;
+accent-color: #fff;
+margin-right: 3px;
 
 }
 .remember-forgot a{
-    color: #fff;
-    text-decoration: none;
+color: #fff;
+text-decoration: none;
 
 }
 .remember-forgot a:hover{
-    text-decoration: underline;
+text-decoration: underline;
 }
 .form-popup .btn{
-    width: 100%;
-    height: 45px;
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
+width: 100%;
+height: 45px;
+background: #fff;
+border: none;
+outline: none;
+border-radius: 40px;
+box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+cursor: pointer;
+font-size: 16px;
+color: #333;
+font-weight: 600;
 }
 .form-popup .register-link{
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
+font-size: 14.5px;
+text-align: center;
+margin: 20px 0 15px;
 
 }
 .register-link p a{
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
+color: #fff;
+text-decoration: none;
+font-weight: 600;
 }
 .register-link p a:hover {
-    text-decoration: underline;
+text-decoration: underline;
 }
