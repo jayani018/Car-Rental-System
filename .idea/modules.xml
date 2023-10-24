@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/car_Rent_Back_End/car_Rent_Back_End.iml" filepath="$PROJECT_DIR$/car_Rent_Back_End/car_Rent_Back_End.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/car_rental_system.iml" filepath="$PROJECT_DIR$/.idea/car_rental_system.iml" />
     </modules>
   </component>

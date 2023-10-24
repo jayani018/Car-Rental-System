@@ -14,7 +14,6 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 /**
@@ -29,6 +28,7 @@ public class JPAConfig {
     public JPAConfig(){
         System.out.println("JPAConfig : Instantiated");
     }
+    
     @Autowired
     Environment env;
 
