@@ -22,6 +22,7 @@ import javax.sql.DataSource;
  * @since : v0.01.0
  **/
 @Configuration
+qw
 @EnableJpaRepositories(basePackages = "lk.ijse.spring.repo")
 @EnableTransactionManagement
 @PropertySource("classpath:properties.properties")
