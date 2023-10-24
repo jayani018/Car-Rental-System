@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background: blueviolet;
+    background:black;
     color: white;
 }
 .panel{
@@ -41,7 +41,7 @@
 }
 .side-bar{
     width: 250px;
-    background: blueviolet;
+    background: #343f4f;
     min-height: 100vh;
     transition: 500ms width;
 }
@@ -60,4 +60,36 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.side-bar ul li:hover{
+    background: #ff253a;
+}
+.side-bar ul li a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.side-bar ul li a i{
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 23px;
+}
+#navBtn{
+    display: inline-block;
+    margin-left: 70px;
+    font-size: 20px;
+    transition: 500ms color;
+}
+#checkbox{
+    display: none;
+}
+#checkbox:checked ~ .body .side-bar{
+    width: 60px;
+}
+#checkbox:checked ~ .body .side-bar .user-p{
+    visibility: hidden;
+}
+#checkbox:checked ~.body .side-bar a span{
+    display: none;
 }
