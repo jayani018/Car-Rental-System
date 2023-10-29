@@ -20,7 +20,7 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userID;
+    private String userID;
     private String UserName;
     private String password;
     @Enumerated(EnumType.STRING)

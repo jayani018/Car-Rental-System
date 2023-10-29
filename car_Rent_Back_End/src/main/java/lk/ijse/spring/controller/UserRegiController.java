@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.lang.model.element.Name;
+
 /**
  * @author : Jayani_Arunika  10/29/2023 - 12:08 AM
  * @since : v0.01.0
@@ -23,10 +25,11 @@ public class UserRegiController {
     private UserRegiService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveUser(@RequestBody UserRegiDTO dto){
-        service.saveUser(dto);
-        System.out.println(dto);
+    @PostMapping
+    public ResponseUtil saveUser(@ModelAttribute UserRegiDTO userRegiDTO, @ModelAttribute UserDTO userDTO){
+       userRegiDTO.setUser(userDTO);
+        service.saveUser(userRegiDTO);
+        System.out.println(userRegiDTO);
         return new ResponseUtil("Ok","Sucessfully Registered..",null);
     }
 
