@@ -29,7 +29,7 @@ public class Car {
     private String transmission_Type;
     private String fuel_Type;
     private String rent_Duration_Price;
-    private String price_Extra_KM;
+    private double price_Extra_KM;
     private  String registration_Number;
     private double free_Mileage;
     private String color;
