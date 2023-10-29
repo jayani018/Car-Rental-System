@@ -1,12 +1,12 @@
 package lk.ijse.spring.entity;
 
+import lk.ijse.spring.enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : Jayani_Arunika  10/15/2023 - 5:43 PM
@@ -19,9 +19,11 @@ import javax.persistence.Id;
 @ToString
 public class User {
     @Id
-    private String userID;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int userID;
     private String UserName;
     private String password;
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private RoleType role;
 
 }

@@ -1,5 +1,6 @@
 package lk.ijse.spring.dto;
 
+import lk.ijse.spring.enums.RoleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +20,5 @@ public class UserDTO {
     private String userID;
     private String userName;
     private String password;
-    private String role;
+    private RoleType role;
 }
