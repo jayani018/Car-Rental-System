@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f985def-0a6f-4b89-b8c2-9bdd9ee7cd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/pages/SignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/pages/SignUp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,7 @@
       <recent name="E:\car_rental_system\car_Rent_Front_End\asessts\image\contact" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\car_rental_system\car_Rent_Front_End\asessts\css" />
       <recent name="E:\car_rental_system\car_Rent_Front_End\pages" />
       <recent name="E:\car_rental_system\car_Rent_Front_End\controller" />
     </key>
@@ -202,7 +204,7 @@
       <workItem from="1698434666605" duration="2154000" />
       <workItem from="1698516914846" duration="5597000" />
       <workItem from="1698560706357" duration="3604000" />
-      <workItem from="1698565001036" duration="26912000" />
+      <workItem from="1698565001036" duration="29656000" />
     </task>
     <servers />
   </component>
