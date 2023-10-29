@@ -10,10 +10,12 @@ import lk.ijse.spring.service.UserRegiService;
 
 import lombok.ToString;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 
 /**
  * @author : Jayani_Arunika  10/29/2023 - 12:28 AM
@@ -54,6 +56,12 @@ public class UserRegiServiceImpl implements UserRegiService {
         }
         repo.deleteById(regId);
 
+    }
+
+    @Override
+    public ArrayList<UserRegiDTO> getAllUser() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<UserRegiDTO>>() {
+        }.getType());
     }
 
 }

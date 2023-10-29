@@ -29,6 +29,7 @@ public class UserRegiController {
         System.out.println(dto);
         return new ResponseUtil("Ok","Sucessfully Registered..",null);
     }
+
     @PutMapping
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateUser(@RequestBody UserRegiDTO dto){
@@ -40,5 +41,10 @@ public class UserRegiController {
     public ResponseUtil deleteUser(@RequestParam String id){
         service.deleteUser(id);
         return new ResponseUtil("OK","Successfully Deleted. :"+id ,null );
+    }
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping
+    public ResponseUtil getAllUser(){
+        return new ResponseUtil("OK", "Successfully Loaded. :",service.getAllUser());
     }
 }
