@@ -1,6 +1,7 @@
 package lk.ijse.spring.dto;
 
 import javafx.scene.image.Image;
+import lk.ijse.spring.enums.AvailabilityType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,5 +29,5 @@ public class CarDTO {
     private  String registration_Number;
     private double free_Mileage;
     private String color;
-    private String vehicleAvailabilityType;
+    private AvailabilityType vehicleAvailabilityType;
 }

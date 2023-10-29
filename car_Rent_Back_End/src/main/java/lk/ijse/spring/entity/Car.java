@@ -1,6 +1,7 @@
 package lk.ijse.spring.entity;
 
 import javafx.scene.image.Image;
+import lk.ijse.spring.enums.AvailabilityType;
 import lk.ijse.spring.enums.FuelType;
 import lk.ijse.spring.enums.TransmissionType;
 import lombok.AllArgsConstructor;
@@ -40,5 +41,6 @@ public class Car {
     private  String registration_Number;
     private double free_Mileage;
     private String color;
-    private String vehicleAvailabilityType;
+    @Enumerated(EnumType.STRING)
+    private AvailabilityType vehicleAvailabilityType;
 }
