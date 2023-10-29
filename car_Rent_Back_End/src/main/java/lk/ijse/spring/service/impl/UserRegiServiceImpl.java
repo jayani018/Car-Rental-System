@@ -34,8 +34,7 @@ public class UserRegiServiceImpl implements UserRegiService {
     @Override
     public void saveUser(UserRegiDTO dto) {
         if (repo.existsById(dto.getUserId())){
-            throw new RuntimeException("User Already Exist. Please Enter" +
-                    "another id..");
+            throw new RuntimeException("User Already Exist. Please Enter another id..");
         }
 //        repo.save(mapper.map(dto, UserRegi.class));
         repo.save(mapper.map(dto,User.class));
