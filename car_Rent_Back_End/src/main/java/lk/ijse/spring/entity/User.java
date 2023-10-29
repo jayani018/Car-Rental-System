@@ -20,10 +20,8 @@ import javax.persistence.Id;
 public class User {
     @Id
     private String userID;
-    private String name;
-    private String email;
+    private String UserName;
     private String password;
-    private int DOB;
     private String role;
 
 }
