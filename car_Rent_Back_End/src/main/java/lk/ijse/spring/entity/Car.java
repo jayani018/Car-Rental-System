@@ -2,6 +2,7 @@ package lk.ijse.spring.entity;
 
 import javafx.scene.image.Image;
 import lk.ijse.spring.enums.AvailabilityType;
+import lk.ijse.spring.enums.CarType;
 import lk.ijse.spring.enums.FuelType;
 import lk.ijse.spring.enums.TransmissionType;
 import lombok.AllArgsConstructor;
@@ -29,7 +30,7 @@ public class Car {
     private String name;
     private String brand;
     @Enumerated(EnumType.STRING)
-    private String CarType;
+    private lk.ijse.spring.enums.CarType CarType;
     private String image;
     private int number_Of_Passengers;
     @Enumerated(EnumType.STRING)

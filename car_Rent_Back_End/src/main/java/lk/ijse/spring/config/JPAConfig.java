@@ -41,8 +41,8 @@ public class JPAConfig {
         factory.setJpaVendorAdapter(vad);
         factory.setPackagesToScan(env.getRequiredProperty("pro.entity"));
         return factory;
-    }
 
+    }
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource ds= new DriverManagerDataSource();
