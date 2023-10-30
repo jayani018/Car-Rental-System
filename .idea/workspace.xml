@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f985def-0a6f-4b89-b8c2-9bdd9ee7cd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/pages/SignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/pages/SignUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/pages/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/pages/Home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +21,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
@@ -29,6 +28,7 @@
         <option value="Class" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/car_Rent_Front_End/asessts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/car_Rent_Front_End" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.26121372" />
@@ -66,10 +66,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\car_rental_system\car_Rent_Front_End" />
       <recent name="E:\car_rental_system\car_Rent_Front_End\asessts" />
       <recent name="E:\car_rental_system\car_Rent_Front_End\asessts\image\dashbord" />
       <recent name="E:\car_rental_system\car_Rent_Front_End\images1" />
-      <recent name="E:\car_rental_system\car_Rent_Front_End" />
       <recent name="E:\car_rental_system\car_Rent_Front_End\asessts\image\contact" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -82,15 +82,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,6 +203,7 @@
       <workItem from="1698516914846" duration="5597000" />
       <workItem from="1698560706357" duration="3604000" />
       <workItem from="1698565001036" duration="29656000" />
+      <workItem from="1698662628184" duration="2764000" />
     </task>
     <servers />
   </component>
