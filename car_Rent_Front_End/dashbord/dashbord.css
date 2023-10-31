@@ -64,6 +64,10 @@
 .side-bar ul li:hover{
     background: #ff253a;
 }
+#selectMethode{
+    margin-right: 0;
+    transition: transform 0.2s ease-in-out;
+}
 .side-bar ul li a{
     text-decoration: none;
     color: white;
