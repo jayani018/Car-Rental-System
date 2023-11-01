@@ -252,4 +252,13 @@ form .btn {
 #bookingReq{
     width: 94%;
 }
+#dailyIncome{
+    width: auto;
+}
+#monthlyIncome{
+    width: auto;
+}
+#annualIncome{
+    width: auto;
+}
 
