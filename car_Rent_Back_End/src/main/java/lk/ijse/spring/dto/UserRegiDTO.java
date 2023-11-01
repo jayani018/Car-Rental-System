@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 @ToString
 public class UserRegiDTO {
-    private String userId;
+    private String userID;
     private String name;
     private String contactNo;
     private String address;

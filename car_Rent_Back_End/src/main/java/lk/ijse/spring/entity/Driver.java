@@ -21,7 +21,7 @@ import javax.persistence.*;
 @ToString
 public class Driver {
     @Id
-    private String driverId;
+    private String userID;
     private String name;
     private String contact_No;
     private String address;

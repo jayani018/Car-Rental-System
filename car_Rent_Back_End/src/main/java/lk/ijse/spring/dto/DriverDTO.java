@@ -18,8 +18,8 @@ import javax.lang.model.element.Name;
 @Data
 @ToString
 public class DriverDTO {
-    private String driverId;
-    private Name name;
+    private String userID;
+    private String name;
     private String contactNo;
     private String address;
     private String email;

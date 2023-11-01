@@ -37,8 +37,8 @@ public class UserRegiServiceImpl implements UserRegiService {
 
     @Override
     public void saveUser(UserRegiDTO dto) {
-        UserRegi regUser = new UserRegi(dto.getUserId(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", "", new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
-        if (repo.existsById(dto.getUserId()))
+        UserRegi regUser = new UserRegi(dto.getUserID(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", "", new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
+        if (repo.existsById(dto.getUserID()))
             throw new RuntimeException("User Already Exist. Please enter another id..!");
 
         try {
@@ -64,7 +64,7 @@ public class UserRegiServiceImpl implements UserRegiService {
 
     @Override
     public void updateUser(UserRegiDTO dto) {
-        if (!repo.existsById(dto.getUserId())){
+        if (!repo.existsById(dto.getUserID())){
             throw new RuntimeException("Customer Not Exist. Please Enter Valid id.." );
         }
         repo.save(mapper.map(dto, User.class));

@@ -21,7 +21,7 @@ import javax.persistence.OneToOne;
 @ToString
 public class Admin {
     @Id
-    private String adminId;
+    private String userID;
     private String name;
     private String contactNo;
     private String address;

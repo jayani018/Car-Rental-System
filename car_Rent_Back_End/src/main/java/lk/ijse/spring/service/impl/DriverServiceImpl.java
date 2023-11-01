@@ -2,6 +2,7 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.entity.Driver;
+import lk.ijse.spring.entity.User;
 import lk.ijse.spring.repo.AdminRepo;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
@@ -11,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 /**
@@ -29,15 +33,30 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO dto) {
-        if (repo.existsById(dto.getDriverId())) {
+        Driver driver = new Driver(dto.getUserID(),dto.getName(),dto.getAddress(), dto.getContactNo(), dto.getLicenseNo(), dto.getEmail(), dto.getNic(),"",dto.getDriverAvailability(), new User(dto.getUser().getUserID(),dto.getUser().getUserName(),dto.getUser().getPassword(),dto.getUser().getRole()));
+        System.out.println(driver);
+        if (repo.existsById(dto.getUserID()))
             throw new RuntimeException("Driver Already Exist. Please enter another id..!");
+        try {
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getLicenseImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicenseImg().getOriginalFilename()));
+
+            driver.setLicense_Img("uploads/" + dto.getLicenseImg().getOriginalFilename());
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
         }
-        repo.save(mapper.map(dto, Driver.class));
+
+        repo.save(driver);
     }
 
     @Override
     public void updateDriver(DriverDTO dto) {
-        if (!repo.existsById(dto.getDriverId())) {
+        if (!repo.existsById(dto.getUserID())) {
             throw new RuntimeException("Driver Not Exist. Please enter Valid id..!");
         }
         repo.save(mapper.map(dto, Driver.class));

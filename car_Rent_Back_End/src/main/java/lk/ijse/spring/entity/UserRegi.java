@@ -24,7 +24,7 @@ import javax.persistence.OneToOne;
 @ToString
 public class UserRegi {
     @Id
-    private String userId;
+    private String userID;
     private Name name;
     private String contactNo;
     private String address;
@@ -37,7 +37,7 @@ public class UserRegi {
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
 
-    public UserRegi(String userId, String name, String contactNo, String address, String email, String nic, String licenseNo, String nicImg, String licenseImg, User user) {
+    public UserRegi(String userID, String name, String contactNo, String address, String email, String nic, String licenseNo, String nicImg, String licenseImg, User user) {
 
     }
 }
