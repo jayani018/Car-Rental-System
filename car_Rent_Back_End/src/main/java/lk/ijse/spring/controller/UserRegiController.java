@@ -38,7 +38,7 @@ public class UserRegiController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateUser(@RequestBody UserRegiDTO dto){
         service.updateUser(dto);
-        return new ResponseUtil("Ok","Successfully Updated. :"+dto.getUserId(),null);
+        return new ResponseUtil("Ok","Successfully Updated. :"+dto.getUserID(),null);
     }
     @ResponseStatus(HttpStatus.CREATED)
     @DeleteMapping(params = {"id"})
