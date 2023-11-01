@@ -16,6 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 /**
@@ -34,11 +37,29 @@ public class UserRegiServiceImpl implements UserRegiService {
 
     @Override
     public void saveUser(UserRegiDTO dto) {
-        if (repo.existsById(dto.getUserId())){
-            throw new RuntimeException("User Already Exist. Please Enter another id..");
+        UserRegi regUser = new UserRegi(dto.getUserId(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", "", new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
+        if (repo.existsById(dto.getUserId()))
+            throw new RuntimeException("User Already Exist. Please enter another id..!");
+
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getNicImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNicImg().getOriginalFilename()));
+            dto.getLicenseImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicenseImg().getOriginalFilename()));
+
+            regUser.setNicImg("uploads/" + dto.getNicImg().getOriginalFilename());
+            regUser.setLicenseImg("uploads/" + dto.getLicenseImg().getOriginalFilename());
+
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
         }
-//        repo.save(mapper.map(dto, UserRegi.class));
-        repo.save(mapper.map(dto,User.class));
+        System.out.println(regUser);
+        repo.save(regUser);
     }
 
     @Override

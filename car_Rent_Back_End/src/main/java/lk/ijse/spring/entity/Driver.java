@@ -1,5 +1,6 @@
 package lk.ijse.spring.entity;
 
+import lk.ijse.spring.enums.AvailabilityType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,7 +29,8 @@ public class Driver {
     private String nic;
     private String license_No;
     private String license_Img;
-    private String driverAvailability;
+    @Enumerated(EnumType.STRING)
+    private AvailabilityType driverAvailability;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;

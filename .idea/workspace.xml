@@ -10,15 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f985def-0a6f-4b89-b8c2-9bdd9ee7cd20" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/car_Rent_Back_End_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/car_Rent_Back_End_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/controller/UserRegiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/controller/UserRegiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/car_Rent_Back_End.iml" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/car_Rent_Back_End.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/config/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/config/WebAppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/dto/DriverDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/dto/DriverDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/entity/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/entity/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/entity/UserRegi.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/entity/UserRegi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/enums/AvailabilityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/enums/AvailabilityType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/repo/UserRegiRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/repo/UserRegiRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/service/UserRegiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/service/UserRegiService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/service/impl/UserRegiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/src/main/java/lk/ijse/spring/service/impl/UserRegiServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/target/car_Rent_Back_End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/target/car_Rent_Back_End-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/controller/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +96,7 @@
       <recent name="E:\car_rental_system\car_Rent_Front_End\controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lk.ijse.spring.advisor" />
       <recent name="lk.ijse.spring.entity" />
     </key>
   </component>
@@ -224,7 +228,7 @@
       <workItem from="1698674933833" duration="10154000" />
       <workItem from="1698733204257" duration="571000" />
       <workItem from="1698736051446" duration="1421000" />
-      <workItem from="1698775594654" duration="29193000" />
+      <workItem from="1698775594654" duration="36451000" />
     </task>
     <servers />
   </component>

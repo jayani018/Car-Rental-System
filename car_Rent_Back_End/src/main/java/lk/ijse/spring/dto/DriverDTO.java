@@ -1,9 +1,11 @@
 package lk.ijse.spring.dto;
 
+import lk.ijse.spring.enums.AvailabilityType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.lang.model.element.Name;
 
@@ -23,8 +25,8 @@ public class DriverDTO {
     private String email;
     private String nic;
     private String licenseNo;
-    private String licenseImg;
-    private String driverAvailability;
+    private MultipartFile licenseImg;
+    private AvailabilityType driverAvailability;
 
     private UserDTO user;
 }

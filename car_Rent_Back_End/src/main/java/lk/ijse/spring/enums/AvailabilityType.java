@@ -6,5 +6,5 @@ package lk.ijse.spring.enums;
  **/
 
 public enum AvailabilityType {
-
+    AVAILABLE, UNAVAILABLE,MAINTAIN,UNDER_MAINTAIN
 }

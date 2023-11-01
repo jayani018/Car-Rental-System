@@ -37,5 +37,7 @@ public class UserRegi {
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
 
+    public UserRegi(String userId, String name, String contactNo, String address, String email, String nic, String licenseNo, String nicImg, String licenseImg, User user) {
 
+    }
 }
