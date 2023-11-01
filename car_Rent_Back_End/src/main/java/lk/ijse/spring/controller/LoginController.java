@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  **/
 @RestController
 @CrossOrigin
-@RequestMapping("/LoginForm")
+@RequestMapping("/loginForm")
 public class LoginController {
     @Autowired
     private UserService service;

@@ -7,7 +7,7 @@ showPopupBtn.addEventListener("click", () => {
 
 hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
 
-let  baseUrlLogin = "http://localhost:8081/car_Rent_Back_End_war/";
+let  baseUrlLogin = "http://localhost:8080/car_Rent_Back_End_war/";
 
 $("#btnLogin").on("click",function () {
     login;
@@ -19,7 +19,7 @@ function login() {
     let loginPassword = $("#password").val();
 
     $.ajax({
-        url: baseUrlLogin + "LoginForm",
+        url: baseUrlLogin + "loginForm",
         contentType: "application/json",
         dataType: "json",
         success: function (res) {
@@ -27,7 +27,7 @@ function login() {
                 if (loginRole_Type === login.role_Type && loginUserName === login.userName && loginPassword === login.password) {
                     if (loginRole_Type === "DRIVER" && loginUserName === login.userName && loginPassword === login.password) {
                         $.ajax({
-                            url: baseUrlLogin + "LoginForm/?username=" + loginUserName + "&password=" + loginPassword,
+                            url: baseUrlLogin + "loginForm/?username=" + loginUserName + "&password=" + loginPassword,
                             data: res.data,
                             method: "get",
                             success: function (res1) {

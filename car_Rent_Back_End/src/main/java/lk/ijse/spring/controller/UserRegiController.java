@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.UserDTO;
 import lk.ijse.spring.dto.UserRegiDTO;
 import lk.ijse.spring.entity.UserRegi;
@@ -49,5 +50,10 @@ public class UserRegiController {
     @GetMapping
     public ResponseUtil getAllUser(){
         return new ResponseUtil("OK", "Successfully Loaded. :",service.getAllUser());
+    }
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/userRegiIdGenerate")
+    public @ResponseBody CustomDTO customerTdGenerate(){
+        return service.userIdGenerate();
     }
 }
