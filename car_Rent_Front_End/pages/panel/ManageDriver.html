@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../../car_Rent_Front_End/asessts/vendor/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../car_Rent_Front_End/asessts/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../car_Rent_Front_End/asessts/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../../car_Rent_Front_End/asessts/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href=Customer.css>
+</head>
+<body>
+<input type="checkbox" id="checkbox">
+<header class="header">
+  <h1 class="panel">Admin Panel
+    <label for="checkbox">
+      <i id="navBtn" class="fa fa-bars" aria-hidden="true"></i>
+    </label>
+  </h1>
+  <i class="fa fa-user" aria-hidden="true"></i>
+</header>
+<div class="body">
+    <nav class="side-bar">
+        <div class="user-p">
+            <img src="../../asessts/image/dashbord/progile.jpg">
+            <h2>Jayani</h2>
+        </div>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span>Manage</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <span>Details</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-registered" aria-hidden="true"></i>
+                    <span>Booking Request</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-file" aria-hidden="true"></i>
+                    <span>Income Details</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- ======= Main ======= -->
+    <main id="main" class="main">
+
+        <!-- ======= Driver Manage ======= -->
+        <div class="pageTitle" id="pagethree">
+            <h1>Manage Driver</h1>
+
+            <section class="container-fluid mt-3" id="manageDrivers">
+
+
+                <div class="row mt-3">
+                    <div id="bcg" class="card info-card">
+                        <div class="search-bar mt-4">
+                            <div class="search-bar">
+                                <div class="search-form d-flex align-items-center">
+                                    <input type="search" name="driver_Id" id="search_Id" placeholder="Search" title="Enter search keyword">
+                                    <button type="button" title="Search"><i class="bi bi-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Search Bar -->
+                        <div class="row">
+                            <div class="col-xl-12 m-3">
+                                <form class="row" id="driverForm">
+                                    <section id="sec1Driver" class="col-md-4 mt-3">
+                                        <div class="mb-sm-0 col-md-11">
+                                            <label class="form-label" for="user_Id">Driver Id</label>
+                                            <input class="form-control" id="user_Id" readonly type="text" name="user_Id" placeholder="DRI-001">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="firstName">First Name</label>
+                                            <input class="form-control" id="firstName" type="text" name="firstName" placeholder="First Name">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="lastName">Last Name</label>
+                                            <input class="form-control" id="lastName" type="text" name="lastName" placeholder="Last Name">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="contact_No">Contact Number</label>
+                                            <input class="form-control" id="contact_No" type="text" name="contact_No" placeholder="Contact Number">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="address">Address</label>
+                                            <input class="form-control" id="address" type="text" name="address" placeholder="Address">
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </section>
+                                    <section id="sec2Driver" class="col-md-4 mt-3">
+                                        <div class="mb-sm-0 col-md-11">
+                                            <label class="form-label" for="email">Email</label>
+                                            <input class="form-control" id="email" type="text" name="email" placeholder="Email Address">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="nic_No">NIC Number</label>
+                                            <input class="form-control" id="nic_No" type="text" name="nic_No" placeholder="National ID">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="license_No">Driving License ID</label>
+                                            <input class="form-control" id="license_No" type="text" name="license_No" placeholder="Driving License">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="license_Img">Driving License image</label>
+                                            <input class="form-control" id="license_Img" type="file" name="license_Img">
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="driverAvailability">Availability</label>
+                                            <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                                <option value="AVAILABLE">AVAILABLE</option>
+                                            </select>
+                                            <span class="control-error"></span>
+                                        </div>
+                                    </section>
+                                    <section id="sec3Driver" class="col-md-4 mt-3">
+                                        <div class="mb-sm-0 col-md-11">
+                                            <label for="role_Type" class="form-label">Role type</label>
+                                            <select class="form-control" id="role_Type" name="role_Type">
+                                                <option value="DRIVER">DRIVER</option>
+                                            </select>
+                                            <span class="control-error"></span>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label for="user_Name" class="form-label">User Name</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <input class="form-control" id="user_Name" type="text" name="user_Name" placeholder="User Name">
+                                                <span class="control-error"></span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-sm-0 mt-3 col-md-11">
+                                            <label class="form-label" for="password">Password</label>
+                                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter Password">
+                                            <span class="control-error"></span>
+                                        </div>
+
+                                        <div class="mt-4 mb-3 gap-2 justify-content-md-center">
+                                            <button class="btn btn-success me-md-1" id="btnSaveDriver" type="button" formaction="driverForm">Save</button>
+                                            <button type="button" class="btn btn-warning m-1" id="btnUpdateDriver">Update</button>
+                                            <button type="button" class="btn btn-danger" id="btnDeleteDriver">Delete</button>
+                                        </div>
+                                    </section>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div  id="drivebcg" class="card info-card">
+                        <!-- View Driver Details Table Start -->
+                        <div class="row mt-1 mt-md-2 mt-lg-4 justify-content-around" style="height: 320px;">
+                            <div class="col-11 justify-content-around sectionBorder"
+                                 style="height: 290px; background: white">
+                                <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                    <table class="table text-nowrap table-light table-striped table-bordered table-hover">
+                                        <thead class="text-dark table-danger text-center  table-bordered sticky-top">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">First Name</th>
+                                            <th scope="col">Last Name</th>
+                                            <th scope="col">Contact No</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">NIC Number</th>
+                                            <th scope="col">Driving License ID</th>
+                                            <th scope="col">Availability Type</th>
+                                            <th scope="col">Role Type</th>
+                                            <th scope="col">User Name</th>
+                                            <th scope="col">Password</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody id="driverTable"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- View Driver Details Table End -->
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End Driver Manage -->
+
+    </main>
+    <!-- End #main -->
+</div>
+</body>
+</html>
