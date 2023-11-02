@@ -2,6 +2,7 @@ package lk.ijse.spring.repo;
 
 import lk.ijse.spring.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  * @author : Jayani_Arunika  10/29/2023 - 4:14 PM
@@ -9,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  **/
 
 public interface DriverRepo extends JpaRepository<Driver,String> {
+    @Query(value = "SELECT userID FROM Driver ORDER BY userID DESC LIMIT 1", nativeQuery = true)
+    String getLastIndex();
 }

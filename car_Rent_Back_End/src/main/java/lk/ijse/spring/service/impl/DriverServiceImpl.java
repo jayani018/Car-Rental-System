@@ -1,5 +1,6 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.entity.User;
@@ -77,5 +78,11 @@ public class DriverServiceImpl implements DriverService {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<Driver>>() {
         }.getType());
     }
+
+
+    @Override
+    public CustomDTO userIdGenerate() {
+        return new CustomDTO(repo.getLastIndex());
     }
+}
 

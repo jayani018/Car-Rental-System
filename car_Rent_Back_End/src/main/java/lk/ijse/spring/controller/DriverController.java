@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.DriverDTO;
 import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -43,5 +44,10 @@ public class DriverController {
     @GetMapping
     public ResponseUtil getAllDriver() {
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllDriver());
+    }
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/driverIdGenerate")
+    public @ResponseBody CustomDTO customerIdGenerate() {
+        return service.userIdGenerate();
     }
 }
