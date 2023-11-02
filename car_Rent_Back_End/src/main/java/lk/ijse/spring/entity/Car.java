@@ -1,6 +1,7 @@
 package lk.ijse.spring.entity;
 
 import javafx.scene.image.Image;
+import lk.ijse.spring.embeded.Rate;
 import lk.ijse.spring.enums.AvailabilityType;
 import lk.ijse.spring.enums.CarType;
 import lk.ijse.spring.enums.FuelType;
@@ -10,10 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author : Jayani_Arunika  10/29/2023 - 2:22 PM
@@ -31,13 +29,15 @@ public class Car {
     private String brand;
     @Enumerated(EnumType.STRING)
     private lk.ijse.spring.enums.CarType CarType;
-    private String image;
+    @Embedded
+    private Image image;
     private int number_Of_Passengers;
     @Enumerated(EnumType.STRING)
     private TransmissionType transmission_Type;
     @Enumerated(EnumType.STRING)
     private FuelType fuel_Type;
-    private String rent_Duration_Price;
+    @Embedded
+    private Rate rent_Duration_Price;
     private double price_Extra_KM;
     private  String registration_Number;
     private double free_Mileage;
