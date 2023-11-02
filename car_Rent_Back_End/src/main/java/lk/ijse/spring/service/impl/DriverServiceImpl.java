@@ -57,10 +57,27 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void updateDriver(DriverDTO dto) {
+        Driver driver = new Driver(dto.getUserID(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", dto.getDriverAvailability(), new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
+        System.out.println(driver);
         if (!repo.existsById(dto.getUserID())) {
             throw new RuntimeException("Driver Not Exist. Please enter Valid id..!");
         }
-        repo.save(mapper.map(dto, Driver.class));
+
+        try {
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getLicenseImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicenseImg().getOriginalFilename()));
+
+            driver.setLicense_Img("uploads/" + dto.getLicenseImg().getOriginalFilename());
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(driver);
+        repo.save(driver);
 
     }
 
