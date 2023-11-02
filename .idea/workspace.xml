@@ -11,9 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f985def-0a6f-4b89-b8c2-9bdd9ee7cd20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/controller/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/pages/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/pages/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_Rent_Front_End/pages/SignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Front_End/pages/SignUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_Rent_Back_End/target/car_Rent_Back_End-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/car_Rent_Back_End/target/car_Rent_Back_End-1.0-SNAPSHOT.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +219,7 @@
       <workItem from="1698736051446" duration="1421000" />
       <workItem from="1698775594654" duration="42559000" />
       <workItem from="1698902615681" duration="8941000" />
-      <workItem from="1698919621094" duration="5006000" />
+      <workItem from="1698919621094" duration="13300000" />
     </task>
     <servers />
   </component>
