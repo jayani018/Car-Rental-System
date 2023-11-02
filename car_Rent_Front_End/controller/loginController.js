@@ -14,7 +14,7 @@ $("#btnLogin").on("click",function () {
 });
 
 function login() {
-    let loginRole = $("").val();
+    let loginRole_Type = $("#role_Type").val();
     let loginUserName = $("#userName").val();
     let loginPassword = $("#password").val();
 
