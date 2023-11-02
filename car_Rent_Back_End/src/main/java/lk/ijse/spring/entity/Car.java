@@ -1,6 +1,6 @@
 package lk.ijse.spring.entity;
 
-import javafx.scene.image.Image;
+import lk.ijse.spring.embeded.Image;
 import lk.ijse.spring.embeded.Rate;
 import lk.ijse.spring.enums.AvailabilityType;
 import lk.ijse.spring.enums.CarType;
@@ -28,7 +28,7 @@ public class Car {
     private String name;
     private String brand;
     @Enumerated(EnumType.STRING)
-    private lk.ijse.spring.enums.CarType CarType;
+    private CarType CarType;
     @Embedded
     private Image image;
     private int number_Of_Passengers;
@@ -44,4 +44,7 @@ public class Car {
     private String color;
     @Enumerated(EnumType.STRING)
     private AvailabilityType vehicleAvailabilityType;
+
+    public Car(String carId, String name, String brand, String type, Image image, int number_of_passengers, String transmission_type, String fuel_type, Rate rent_duration_price, double price_extra_km, String registration_number, double free_mileage, String color, AvailabilityType vehicleAvailabilityType) {
+    }
 }

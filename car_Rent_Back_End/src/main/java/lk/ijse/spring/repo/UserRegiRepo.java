@@ -2,6 +2,7 @@ package lk.ijse.spring.repo;
 
 import lk.ijse.spring.dto.UserRegiDTO;
 import lk.ijse.spring.entity.User;
+import lk.ijse.spring.entity.UserRegi;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -10,7 +11,7 @@ import org.springframework.data.jpa.repository.Query;
  * @since : v0.01.0
  **/
 
-public interface UserRegiRepo extends JpaRepository<User,String> {
+public interface UserRegiRepo extends JpaRepository<UserRegi,String> {
     @Query(value = "SELECT userId FROM userregi ORDER BY userId DESC LIMIT 1", nativeQuery = true)
     String getLastIndex();
 

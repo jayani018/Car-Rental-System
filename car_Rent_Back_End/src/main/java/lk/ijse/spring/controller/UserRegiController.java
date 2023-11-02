@@ -34,11 +34,12 @@ public class UserRegiController {
         return new ResponseUtil("Ok","Sucessfully Registered..",null);
     }
 
-    @PutMapping
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateUser(@RequestBody UserRegiDTO dto){
-        service.updateUser(dto);
-        return new ResponseUtil("Ok","Successfully Updated. :"+dto.getUserID(),null);
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(path = "/update")
+    public ResponseUtil updateUser(@ModelAttribute UserRegiDTO userRegiDTO,@ModelAttribute UserDTO userDTO ){
+       userRegiDTO.setUser(userDTO);
+        service.updateUser(userRegiDTO);
+        return new ResponseUtil("Ok","Successfully Updated. :"+userRegiDTO.getUserID(),null);
     }
     @ResponseStatus(HttpStatus.CREATED)
     @DeleteMapping(params = {"id"})

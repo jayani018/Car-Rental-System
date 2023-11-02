@@ -5,6 +5,7 @@ import lk.ijse.spring.dto.UserDTO;
 import lk.ijse.spring.dto.UserRegiDTO;
 import lk.ijse.spring.entity.User;
 import lk.ijse.spring.entity.UserRegi;
+import lk.ijse.spring.enums.RoleType;
 import lk.ijse.spring.repo.UserRegiRepo;
 
 import lk.ijse.spring.service.UserRegiService;
@@ -37,7 +38,7 @@ public class UserRegiServiceImpl implements UserRegiService {
 
     @Override
     public void saveUser(UserRegiDTO dto) {
-        UserRegi regUser = new UserRegi(dto.getUserID(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", "", new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
+        UserRegi userRegi = new UserRegi(dto.getUserID(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", "", new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
         if (repo.existsById(dto.getUserID()))
             throw new RuntimeException("User Already Exist. Please enter another id..!");
 
@@ -51,23 +52,45 @@ public class UserRegiServiceImpl implements UserRegiService {
             dto.getNicImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNicImg().getOriginalFilename()));
             dto.getLicenseImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicenseImg().getOriginalFilename()));
 
-            regUser.setNicImg("uploads/" + dto.getNicImg().getOriginalFilename());
-            regUser.setLicenseImg("uploads/" + dto.getLicenseImg().getOriginalFilename());
+            userRegi.setNicImg("uploads/" + dto.getNicImg().getOriginalFilename());
+            userRegi.setLicenseImg("uploads/" + dto.getLicenseImg().getOriginalFilename());
 
 
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(regUser);
-        repo.save(regUser);
+        System.out.println(userRegi);
+        repo.save(userRegi);
     }
 
     @Override
     public void updateUser(UserRegiDTO dto) {
-        if (!repo.existsById(dto.getUserID())){
-            throw new RuntimeException("Customer Not Exist. Please Enter Valid id.." );
+        UserRegi userRegi = new UserRegi(dto.getUserID(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", "", new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
+        if (!repo.existsById(dto.getUserID())) {
+            throw new RuntimeException("User Not Exist. Please enter Valid id..!");
         }
-        repo.save(mapper.map(dto, User.class));
+
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+            File uploadsDir = new File(projectPath + "/uploads");
+            System.out.println(projectPath);
+            uploadsDir.mkdir();
+
+            dto.getNicImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNicImg().getOriginalFilename()));
+            dto.getLicenseImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicenseImg().getOriginalFilename()));
+
+            userRegi.setNicImg("uploads/" + dto.getNicImg().getOriginalFilename());
+            userRegi.setLicenseImg("uploads/" + dto.getLicenseImg().getOriginalFilename());
+
+
+        } catch (IOException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(userRegi);
+        userRegi.getUser().setRole(RoleType.REGISTER_USER);
+       repo.save(userRegi);
+
     }
 
     @Override
