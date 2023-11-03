@@ -2,6 +2,8 @@ package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.dto.UserDTO;
+import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,16 +25,18 @@ public class DriverController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil saveDriver(@RequestBody DriverDTO dto) {
-        service.saveDriver(dto);
-        System.out.println(dto);
+    public ResponseUtil saveDriver(@ModelAttribute DriverDTO driverDTO,@ModelAttribute UserDTO userDTO) {
+        driverDTO.setUser(userDTO);
+        service.saveDriver(driverDTO);
+        System.out.println(driverDTO);
         return new ResponseUtil("OK", "Successfully Registered.!", null);
     }
     @PutMapping
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateDriver(@RequestBody DriverDTO dto) {
-        service.updateDriver(dto);
-        return new ResponseUtil("OK", "Successfully Updated. :" + dto.getUserID(), null);
+    @PostMapping("/update")
+    public ResponseUtil updateDriver(@ModelAttribute DriverDTO driverDTO,@ModelAttribute UserDTO userDTO) {
+        driverDTO.setUser(userDTO);
+        service.updateDriver(driverDTO);
+        return new ResponseUtil("OK", "Successfully Updated. :" + driverDTO.getUserID(), null);
     }
     @ResponseStatus(HttpStatus.CREATED)
     @DeleteMapping(params = {"id"})
@@ -50,4 +54,33 @@ public class DriverController {
     public @ResponseBody CustomDTO customerIdGenerate() {
         return service.userIdGenerate();
     }
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/loadAvalabilityDrivers")
+    public ResponseUtil getAllAvalabileDriver() {
+        return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllAvalabileDriver());
+    }
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/searchDriver", params = {"driver_Id"})
+    public Driver searchDriverId(String driver_Id) {
+        return service.searchDriverId(driver_Id);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/driverCount")
+    public @ResponseBody CustomDTO getSumCustomer() {
+        return service.getSumDriver();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/driverAvailableCount")
+    public @ResponseBody CustomDTO getSumAvailableDriver() {
+        return service.getSumAvailableDriver();
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/driverUnavailableCount")
+    public @ResponseBody CustomDTO getSumUnavailableDriver() {
+        return service.getSumUnavailableDriver();
+    }
+
 }

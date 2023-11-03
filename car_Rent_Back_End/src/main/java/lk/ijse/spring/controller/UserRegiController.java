@@ -48,13 +48,28 @@ public class UserRegiController {
         return new ResponseUtil("OK","Successfully Deleted. :"+id ,null );
     }
     @ResponseStatus(HttpStatus.CREATED)
-    @GetMapping
+    @GetMapping("/loadAllUsers")
     public ResponseUtil getAllUser(){
         return new ResponseUtil("OK", "Successfully Loaded. :",service.getAllUser());
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/userRegiIdGenerate")
     public @ResponseBody CustomDTO customerTdGenerate(){
         return service.userIdGenerate();
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/searchCustomer", params = {"cus_Id"})
+    public UserRegi searchDriverId(String cus_Id) {
+        return service.searchUserId(cus_Id);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @GetMapping(path = "/customerCount")
+    public @ResponseBody CustomDTO getSumCustomer() {
+        return service.getSumUser();
+    }
+
 }
+

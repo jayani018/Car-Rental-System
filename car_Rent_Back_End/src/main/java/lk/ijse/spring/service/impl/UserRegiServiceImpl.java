@@ -104,13 +104,33 @@ public class UserRegiServiceImpl implements UserRegiService {
 
     @Override
     public ArrayList<UserRegiDTO> getAllUser() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<UserRegiDTO>>() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<UserRegi>>() {
         }.getType());
     }
 
     @Override
     public CustomDTO userIdGenerate() {
         return new CustomDTO(repo.getLastIndex());
+    }
+
+    @Override
+    public UserRegi searchUserId(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        System.out.println(id);
+        return mapper.map(repo.findById(id).get(), UserRegi.class);
+
+    }
+
+    @Override
+    public CustomDTO getSumUser() {
+        return new CustomDTO(repo.getSumUsers());
+    }
+
+    @Override
+    public UserRegiDTO availableUser(String userName) {
+        return repo.availableUser(userName);
     }
 
 }

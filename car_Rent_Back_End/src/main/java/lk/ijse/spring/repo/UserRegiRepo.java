@@ -12,7 +12,12 @@ import org.springframework.data.jpa.repository.Query;
  **/
 
 public interface UserRegiRepo extends JpaRepository<UserRegi,String> {
-    @Query(value = "SELECT userId FROM userregi ORDER BY userId DESC LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT userId FROM UserRegi ORDER BY userId DESC LIMIT 1", nativeQuery = true)
     String getLastIndex();
 
+    @Query(value = "SELECT COUNT(userID) FROM UserRegi", nativeQuery = true)
+    int getSumUsers();
+
+    @Query(value = "SELECT userregi.userId,userregi.name,userregi.contactNo,userregi.address,userregi.email,userregi.nic,userregi.licenseNo,userregi.nicImg,userregi.licenseImg  FROM UserRegi JOIN  user u on u.userID = userregi.userID where userName=?1", nativeQuery = true)
+    UserRegiDTO availableUser(String userName);
 }

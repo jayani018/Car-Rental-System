@@ -101,5 +101,34 @@ public class DriverServiceImpl implements DriverService {
     public CustomDTO userIdGenerate() {
         return new CustomDTO(repo.getLastIndex());
     }
+
+    @Override
+    public ArrayList<DriverDTO> getAllAvalabileDriver() {
+        return mapper.map(repo.availableDrivers(), new TypeToken<ArrayList<Driver>>() {
+        }.getType());
+    }
+
+    @Override
+    public CustomDTO getSumAvailableDriver() {
+        return new CustomDTO(repo.getSumAvailableDriver());
+    }
+
+    @Override
+    public CustomDTO getSumUnavailableDriver() {
+        return new CustomDTO(repo.getSumUnavailableDriver());
+    }
+
+    @Override
+    public Driver searchDriverId(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException("Wrong ID. Please enter Valid id..!");
+        }
+        return mapper.map(repo.findById(id).get(), Driver.class);
+    }
+
+    @Override
+    public CustomDTO getSumDriver() {
+        return new CustomDTO(repo.getSumDriver());
+    }
 }
 

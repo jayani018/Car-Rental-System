@@ -1,7 +1,9 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.entity.Car;
 
 import java.util.ArrayList;
 
@@ -15,4 +17,14 @@ public interface CarService {
     void updateCar(CarDTO dto);
     void deleteCar(String id);
     ArrayList<CarDTO> getAllCar();
+    CustomDTO carIdGenerate();
+    Car searchCarId(String id);
+    CustomDTO getSumCar();
+    CustomDTO getSumAvailableCar();
+    CustomDTO getSumReservedCar();
+    CustomDTO getSumMaintainCar();
+    CustomDTO getSumUnderMaintainCar();
+    ArrayList<CarDTO> getFilerData(String type,String fuelType);
+    ArrayList<CarDTO> filterCarDetails(String name, String fuel_Type,String type, String transmission_Type);
+
 }

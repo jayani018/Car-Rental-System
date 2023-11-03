@@ -2,6 +2,7 @@ package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CustomDTO;
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.entity.Driver;
 
 import java.util.ArrayList;
 
@@ -16,4 +17,9 @@ public interface DriverService {
     void deleteDriver(String id);
     ArrayList<DriverDTO> getAllDriver();
     CustomDTO userIdGenerate();
+    ArrayList<DriverDTO> getAllAvalabileDriver();
+    CustomDTO getSumAvailableDriver();
+    CustomDTO getSumUnavailableDriver();
+    Driver searchDriverId(String id);
+    CustomDTO getSumDriver();
 }

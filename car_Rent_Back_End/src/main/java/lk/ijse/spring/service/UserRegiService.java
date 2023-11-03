@@ -19,4 +19,7 @@ public interface UserRegiService {
     void deleteUser(String dto);
     ArrayList<UserRegiDTO> getAllUser();
     CustomDTO userIdGenerate();
+    UserRegi searchUserId(String id);
+    CustomDTO getSumUser();
+    UserRegiDTO availableUser(String userName);
 }
