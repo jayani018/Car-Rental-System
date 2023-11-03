@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -17,6 +14,7 @@ import java.time.LocalTime;
  * @author : Jayani_Arunika  11/3/2023 - 4:12 PM
  * @since : v0.01.0
  **/
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
