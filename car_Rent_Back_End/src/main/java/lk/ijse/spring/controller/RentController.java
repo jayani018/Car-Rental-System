@@ -21,7 +21,8 @@ public class RentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/rentIdGenerate")
-    public @ResponseBody CustomDTO  customerIdGenerate() {
+    public @ResponseBody
+    CustomDTO customerIdGenerate() {
         return service.rentIdGenerate();
     }
 
@@ -31,6 +32,8 @@ public class RentController {
         service.bookingCars(dto);
         return new ResponseUtil("Ok", "Successfully Purchased.!", null);
     }
+
+
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/booking")
     public @ResponseBody CustomDTO getSumOfBooking() {
@@ -51,26 +54,29 @@ public class RentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/loadAllRents")
-    public ResponseUtil getAllRents() {
+    public ResponseUtil getAllRents(){
         System.out.println(service.getAllRent());
         return new ResponseUtil("OK", "Successfully Loaded. :", service.getAllRent());
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @DeleteMapping(params = {"id"})
-    public ResponseUtil deleteRent(@RequestParam String id) {
+    public ResponseUtil deleteRent(@RequestParam String id){
         service.deleteRent(id);
         return new ResponseUtil("OK", "Successfully Deleted. :" + id, null);
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/rentConfrom", params = {"rentID", "driverId"})
     public ResponseUtil bookingConform(@RequestParam String rentID, @RequestParam String driverId) {
         service.bookingConform(rentID,driverId);
         return new ResponseUtil("OK", "Successfully Conformed.!", null);
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path = "/rentReject", params = {"rentID", "driverId"})
     public ResponseUtil bookingReject(@RequestParam String rentID, @RequestParam String driverId) {
-        service.bookingReject(rentID,driverId);
+        service.bookingReject(rentID, driverId);
         return new ResponseUtil("OK", "Successfully Conformed.!", null);
     }
 
@@ -79,6 +85,4 @@ public class RentController {
     public RentDTO searchId(String search_Id) {
         return service.searchId(search_Id);
     }
-
-
 }

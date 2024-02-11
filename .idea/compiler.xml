@@ -11,7 +11,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="car_Rent_Back_End" target="8" />
       <module name="dfg" target="8" />
       <module name="fgh" target="8" />
     </bytecodeTargetLevel>

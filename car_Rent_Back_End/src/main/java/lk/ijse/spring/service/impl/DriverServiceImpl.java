@@ -33,45 +33,48 @@ public class DriverServiceImpl implements DriverService {
     private ModelMapper mapper;
 
     @Override
-    public void saveDriver(DriverDTO dto) {
-        Driver driver = new Driver(dto.getUserID(),dto.getName(),dto.getAddress(), dto.getContactNo(), dto.getLicenseNo(), dto.getEmail(), dto.getNic(),"",dto.getDriverAvailability(), new User(dto.getUser().getUserID(),dto.getUser().getUserName(),dto.getUser().getPassword(),dto.getUser().getRole()));
+    public void saveDriver(DriverDTO dto){
+        Driver driver = new Driver(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic_No(), dto.getLicense_No(), "", dto.getDriverAvailability(), new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
         System.out.println(driver);
-        if (repo.existsById(dto.getUserID()))
+        if (repo.existsById(dto.getUser_Id()))
             throw new RuntimeException("Driver Already Exist. Please enter another id..!");
+
         try {
+
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            dto.getLicenseImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicenseImg().getOriginalFilename()));
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
-            driver.setLicense_Img("uploads/" + dto.getLicenseImg().getOriginalFilename());
+            driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (URISyntaxException e) {
             throw new RuntimeException(e);
+        } catch (IOException p) {
+            throw new RuntimeException(p);
         }
-
+        System.out.println(driver);
         repo.save(driver);
     }
 
     @Override
     public void updateDriver(DriverDTO dto) {
-        Driver driver = new Driver(dto.getUserID(), dto.getName(), dto.getContactNo(), dto.getAddress(), dto.getEmail(), dto.getNic(), dto.getLicenseNo(), "", dto.getDriverAvailability(), new User(dto.getUser().getUserID(), dto.getUser().getRole(), dto.getUser().getUserName(), dto.getUser().getPassword()));
+        Driver driver = new Driver(dto.getUser_Id(), dto.getName(), dto.getContact_No(), dto.getAddress(), dto.getEmail(), dto.getNic_No(), dto.getLicense_No(), "", dto.getDriverAvailability(), new User(dto.getUser().getUser_Id(), dto.getUser().getRole_Type(), dto.getUser().getUser_Name(), dto.getUser().getPassword()));
         System.out.println(driver);
-        if (!repo.existsById(dto.getUserID())) {
+        if (!repo.existsById(dto.getUser_Id())) {
             throw new RuntimeException("Driver Not Exist. Please enter Valid id..!");
         }
-
         try {
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
             uploadsDir.mkdir();
 
-            dto.getLicenseImg().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicenseImg().getOriginalFilename()));
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
-            driver.setLicense_Img("uploads/" + dto.getLicenseImg().getOriginalFilename());
+            driver.setLicense_Img("uploads/" + dto.getLicense_Img().getOriginalFilename());
 
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
@@ -82,30 +85,30 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public void deleteDriver(String id) {
-        if (!repo.existsById(id)) {
+    public void deleteDriver(String driver_ID) {
+        if (!repo.existsById(driver_ID)) {
             throw new RuntimeException("Wrong ID..Please enter valid id..!");
         }
-        repo.deleteById(id);
-
+        repo.deleteById(driver_ID);
     }
 
     @Override
     public ArrayList<DriverDTO> getAllDriver() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Driver>>() {
+        return mapper.map(repo.findAll(),new TypeToken<ArrayList<Driver>>(){
         }.getType());
-    }
 
-
-    @Override
-    public CustomDTO userIdGenerate() {
-        return new CustomDTO(repo.getLastIndex());
     }
 
     @Override
     public ArrayList<DriverDTO> getAllAvalabileDriver() {
         return mapper.map(repo.availableDrivers(), new TypeToken<ArrayList<Driver>>() {
         }.getType());
+
+    }
+
+    @Override
+    public CustomDTO userIdGenerate() {
+        return new CustomDTO(repo.getLastIndex());
     }
 
     @Override
@@ -123,12 +126,12 @@ public class DriverServiceImpl implements DriverService {
         if (!repo.existsById(id)) {
             throw new RuntimeException("Wrong ID. Please enter Valid id..!");
         }
-        return mapper.map(repo.findById(id).get(), Driver.class);
+        return mapper.map(repo.findById(id).get(),Driver.class);
     }
 
     @Override
     public CustomDTO getSumDriver() {
         return new CustomDTO(repo.getSumDriver());
     }
-}
 
+}

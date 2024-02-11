@@ -17,8 +17,14 @@ import javax.persistence.Id;
 @Data
 @ToString
 public class UserDTO {
-    private String userID;
-    private String userName;
+    private String user_Id;
+    private RoleType role_Type;
+    private String user_Name;
     private String password;
-    private RoleType role;
+
+    public UserDTO( RoleType role_Type, String user_Name, String password) {
+        this.role_Type = role_Type;
+        this.user_Name = user_Name;
+        this.password = password;
+    }
 }

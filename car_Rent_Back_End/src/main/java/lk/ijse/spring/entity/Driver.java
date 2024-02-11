@@ -21,12 +21,13 @@ import javax.persistence.*;
 @ToString
 public class Driver {
     @Id
-    private String userID;
-    private String name;
+    private String user_Id;
+    @Embedded
+    private Name name;
     private String contact_No;
     private String address;
     private String email;
-    private String nic;
+    private String nic_No;
     private String license_No;
     private String license_Img;
     @Enumerated(EnumType.STRING)

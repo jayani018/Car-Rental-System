@@ -24,11 +24,11 @@ import javax.persistence.*;
 @ToString
 public class Car {
     @Id
-    private String carId;
+    private String car_Id;
     private String name;
     private String brand;
     @Enumerated(EnumType.STRING)
-    private CarType CarType;
+    private CarType type;
     @Embedded
     private Image image;
     private int number_Of_Passengers;
@@ -45,6 +45,6 @@ public class Car {
     @Enumerated(EnumType.STRING)
     private AvailabilityType vehicleAvailabilityType;
 
-    public Car(String carId, String name, String brand, String type, Image image, int number_of_passengers, String transmission_type, String fuel_type, Rate rent_duration_price, double price_extra_km, String registration_number, double free_mileage, String color, AvailabilityType vehicleAvailabilityType) {
-    }
+//    public Car(String carId, String name, String brand, String type, Image image, int number_of_passengers, String transmission_type, String fuel_type, Rate rent_duration_price, double price_extra_km, String registration_number, double free_mileage, String color, AvailabilityType vehicleAvailabilityType) {
+//    }
 }

@@ -6,6 +6,7 @@ import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.entity.Payment;
 import lk.ijse.spring.entity.Rent;
+import lk.ijse.spring.enums.AvailabilityType;
 import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.repo.PaymentRepo;
@@ -30,16 +31,21 @@ import static lk.ijse.spring.enums.RentRequest.PAY;
 @Service
 @Transactional
 public class PaymentServiceImpl implements PaymentService {
-   @Autowired
-   private PaymentRepo paymentRepo;
-   @Autowired
-   private RentRepo rentRepo;
-   @Autowired
-   private CarRepo carRepo;
-   @Autowired
-   private DriverRepo driverRepo;
-   @Autowired
-   private ModelMapper mapper;
+    @Autowired
+    private PaymentRepo paymentRepo;
+
+    @Autowired
+    private RentRepo rentRepo;
+
+    @Autowired
+    private CarRepo carRepo;
+
+    @Autowired
+    private DriverRepo driverRepo;
+
+    @Autowired
+    private ModelMapper mapper;
+
     @Override
     public CustomDTO paymentIdGenerate() {
         return new CustomDTO(paymentRepo.getLastIndex());
@@ -52,30 +58,28 @@ public class PaymentServiceImpl implements PaymentService {
         if (rent.getRentDetails().get(0).getDriverID() != null) {
 
             Driver drivers = driverRepo.findById(rent.getRentDetails().get(0).getDriverID()).get();
-            drivers.setDriverAvailability(AVAILABLE);
+            drivers.setDriverAvailability(AvailabilityType.AVAILABLE);
             driverRepo.save(drivers);
 
             Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
-            car.setVehicleAvailabilityType(UNDER_MAINTAIN);
+            car.setVehicleAvailabilityType(AvailabilityType.UNDER_MAINTAIN);
             carRepo.save(car);
 
             rent.setRentType(PAY);
             rentRepo.save(rent);
+
         }
         if (rent.getRentDetails().get(0).getDriverID() == null) {
             Car car = carRepo.findById(rent.getRentDetails().get(0).getCarID()).get();
-            car.setVehicleAvailabilityType(UNDER_MAINTAIN);
+            car.setVehicleAvailabilityType(AvailabilityType.UNDER_MAINTAIN);
             carRepo.save(car);
-
-            rent.setRentType(PAY);
-            rentRepo.save(rent);
         }
         paymentRepo.save(payment);
     }
 
     @Override
     public ArrayList<PaymentDTO> getAllPayment() {
-        return mapper.map(paymentRepo.findAll(), new TypeToken<ArrayList<PaymentDTO>>() {
+        return mapper.map(paymentRepo.findAll(),new TypeToken<ArrayList<PaymentDTO>>(){
         }.getType());
     }
 }

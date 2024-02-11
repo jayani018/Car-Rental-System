@@ -19,16 +19,17 @@ import javax.persistence.*;
 @ToString
 public class User {
     @Id
-    private String userID;
-    private String userName;
-    private String password;
+    private String user_Id;
     @Enumerated(EnumType.STRING)
-    private RoleType role;
+    private RoleType role_Type;
+    private String user_Name;
+    private String password;
 
 
-    public User(String userID, RoleType role, String userName, String password) {
-        this.role = role;
-        this.userName = userName;
+
+    public User( RoleType role_Type, String user_Name, String password) {
+        this.role_Type = role_Type;
+        this.user_Name = user_Name;
         this.password = password;
     }
 }

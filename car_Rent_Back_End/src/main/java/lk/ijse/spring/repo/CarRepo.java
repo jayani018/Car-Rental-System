@@ -12,25 +12,25 @@ import java.util.ArrayList;
  **/
 
 public interface CarRepo extends JpaRepository<Car,String> {
-    @Query(value = "SELECT carId FROM Car ORDER BY carId DESC LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT car_Id FROM Car ORDER BY car_Id DESC LIMIT 1", nativeQuery = true)
     String getLastIndex();
 
-    @Query(value = "SELECT COUNT(carId) FROM Car", nativeQuery = true)
+    @Query(value = "SELECT COUNT(car_Id) FROM Car", nativeQuery = true)
     int getSumCar();
 
-    @Query(value = "SELECT COUNT(carId) FROM Car WHERE vehicleAvailabilityType='AVAILABLE';", nativeQuery = true)
+    @Query(value = "SELECT COUNT(car_Id) FROM Car WHERE vehicleAvailabilityType='AVAILABLE';", nativeQuery = true)
     int getSumAvailableCar();
 
-    @Query(value = "SELECT COUNT(carId) FROM Car WHERE vehicleAvailabilityType='UNAVAILABLE';", nativeQuery = true)
+    @Query(value = "SELECT COUNT(car_Id) FROM Car WHERE vehicleAvailabilityType='UNAVAILABLE';", nativeQuery = true)
     int getSumReservedCar();
 
-    @Query(value = "SELECT COUNT(carId) FROM Car WHERE vehicleAvailabilityType='MAINTAIN';", nativeQuery = true)
+    @Query(value = "SELECT COUNT(car_Id) FROM Car WHERE vehicleAvailabilityType='MAINTAIN';", nativeQuery = true)
     int getSumMaintainCar();
 
-    @Query(value = "SELECT COUNT(carId) FROM Car WHERE vehicleAvailabilityType='UNDER_MAINTAIN';", nativeQuery = true)
+    @Query(value = "SELECT COUNT(car_Id) FROM Car WHERE vehicleAvailabilityType='UNDER_MAINTAIN';", nativeQuery = true)
     int getSumUnderMaintainCar();
 
-    @Query(value = "SELECT * FROM Car WHERE CarType =?1 and fuel_Type=?2 and vehicleAvailabilityType='AVAILABLE' ", nativeQuery = true)
+    @Query(value = "SELECT * FROM Car WHERE type =?1 and fuel_Type=?2 and vehicleAvailabilityType='AVAILABLE' ", nativeQuery = true)
     ArrayList<Car> filterCar(String type, String fuelType);
 
     @Query(value = "SELECT * FROM Car WHERE name=?1 or fuel_Type=?2 and CarType=?3 and transmission_Type=?4 and vehicleAvailabilityType='AVAILABLE'", nativeQuery = true)

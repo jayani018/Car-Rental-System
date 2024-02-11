@@ -1,9 +1,12 @@
 package lk.ijse.spring.dto;
 
-import javafx.scene.image.Image;
+//import javafx.scene.image.Image;
 import lk.ijse.spring.embeded.ImageDTO;
 import lk.ijse.spring.embeded.Rate;
 import lk.ijse.spring.enums.AvailabilityType;
+import lk.ijse.spring.enums.CarType;
+import lk.ijse.spring.enums.FuelType;
+import lk.ijse.spring.enums.TransmissionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,14 +21,14 @@ import lombok.ToString;
 @Data
 @ToString
 public class CarDTO {
-    private String carId;
+    private String car_Id;
     private String name;
     private String brand;
-    private String type;
+    private CarType type;
     private ImageDTO image;
     private int number_Of_Passengers;
-    private String transmission_Type;
-    private String fuel_Type;
+    private TransmissionType transmission_Type;
+    private FuelType fuel_Type;
     private Rate rent_Duration_Price;
     private double price_Extra_KM;
     private  String registration_Number;

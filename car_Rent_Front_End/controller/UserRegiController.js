@@ -71,7 +71,7 @@ function setTextFieldValues(name, contact_No, address, email, nic, license_No, n
     $("#user_Name").val(user_Name);
     $("#password").val(password);
 
-    $("#firstName").focus();
+    $("#Name").focus();
     checkValidity(customerValidations);
     $("#btnSaveCustomer").attr('disabled', true);
 }
@@ -87,7 +87,7 @@ function loadAllRegUsers() {
 
             for (let i of res.data) {
                 let user_Id = i.user_Id;
-                let name = i.name.name;
+                let name = i.name;
                 let contact_No = i.contact_No;
                 let address = i.address;
                 let email = i.email;

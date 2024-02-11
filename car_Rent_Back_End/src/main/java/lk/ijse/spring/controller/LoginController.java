@@ -21,13 +21,14 @@ public class LoginController {
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllregister(){
+    public ResponseUtil getAllRegUser(){
         System.out.println(service.getAllRegUsers());
         return new ResponseUtil("OK","Successfully Loaded..!",service.getAllRegUsers());
     }
+
     @GetMapping(params = {"username"})
     public ResponseUtil setUser(String username,String password){
-        CurrentUser.currentUser = service.getRegUsers(username, password);
+        CurrentUser.currentUser=service.getRegUsers(username,password);
         return new ResponseUtil("OK","Successfully Loaded..!","");
     }
 
@@ -35,4 +36,6 @@ public class LoginController {
     public ResponseUtil getCurrentUser(){
         return new ResponseUtil("OK","Successfully Loaded..!",CurrentUser.currentUser);
     }
+
+
 }

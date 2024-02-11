@@ -28,15 +28,16 @@ import java.util.ArrayList;
 public class CarServiceImpl implements CarService {
     @Autowired
     private CarRepo repo;
+
     @Autowired
     private ModelMapper mapper;
+
     @Override
     public void saveCar(CarDTO dto) {
-        Car car = new Car(dto.getCarId(), dto.getName(), dto.getBrand(), dto.getType(), new Image(), dto.getNumber_Of_Passengers(), dto.getTransmission_Type(), dto.getFuel_Type(), dto.getRent_Duration_Price(), dto.getPrice_Extra_KM(), dto.getRegistration_Number(), dto.getFree_Mileage(), dto.getColor(), dto.getVehicleAvailabilityType());
-        if (repo.existsById(dto.getCarId())) {
+        Car car = new Car(dto.getCar_Id(), dto.getName(), dto.getBrand(), dto.getType(), new Image(), dto.getNumber_Of_Passengers(), dto.getTransmission_Type(), dto.getFuel_Type(), dto.getRent_Duration_Price(), dto.getPrice_Extra_KM(), dto.getRegistration_Number(), dto.getFree_Mileage(), dto.getColor(), dto.getVehicleAvailabilityType());
+        if (repo.existsById(dto.getCar_Id())) {
             throw new RuntimeException("Car Already Exist. Please enter another id..!");
         }
-
         try {
 
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
@@ -61,16 +62,14 @@ public class CarServiceImpl implements CarService {
         System.out.println(car);
         repo.save(car);
     }
-
 
     @Override
     public void updateCar(CarDTO dto) {
-        Car car = new Car(dto.getCarId(), dto.getName(), dto.getBrand(), dto.getType(), new Image(), dto.getNumber_Of_Passengers(), dto.getTransmission_Type(), dto.getFuel_Type(), dto.getRent_Duration_Price(), dto.getPrice_Extra_KM(), dto.getRegistration_Number(), dto.getFree_Mileage(), dto.getColor(), dto.getVehicleAvailabilityType());
-        if (!repo.existsById(dto.getCarId())) {
+        Car car =new Car(dto.getCar_Id(), dto.getName(), dto.getBrand(),dto.getType(),new Image(),dto.getNumber_Of_Passengers(), dto.getTransmission_Type(), dto.getFuel_Type(), dto.getRent_Duration_Price(), dto.getPrice_Extra_KM(), dto.getRegistration_Number(), dto.getFree_Mileage(), dto.getColor(), dto.getVehicleAvailabilityType());
+        if (!repo.existsById(dto.getCar_Id())){
             throw new RuntimeException("Car Not Exist. Please enter Valid id..!");
         }
-        try {
-
+        try{
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
             File uploadsDir = new File(projectPath + "/uploads");
             System.out.println(projectPath);
@@ -86,39 +85,38 @@ public class CarServiceImpl implements CarService {
             car.getImage().setSide_View("uploads/"+dto.getImage().getSide_View().getOriginalFilename());
             car.getImage().setInterior("uploads/"+dto.getImage().getInterior().getOriginalFilename());
 
-        } catch (IOException | URISyntaxException e) {
+        } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
         }
-
         System.out.println(car);
         repo.save(car);
     }
 
     @Override
-    public void deleteCar(String id) {
-        if (!repo.existsById(id)) {
+    public void deleteCar(String car_Id) {
+        if (!repo.existsById(car_Id)) {
             throw new RuntimeException("Wrong ID..Please enter valid id..!");
         }
-        repo.deleteById(id);
+        repo.deleteById(car_Id);
     }
 
     @Override
     public ArrayList<CarDTO> getAllCar() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<Car>>() {
+        return mapper.map(repo.findAll(),new TypeToken <ArrayList<Car>>(){
         }.getType());
     }
+
     @Override
     public CustomDTO carIdGenerate() {
         return new CustomDTO(repo.getLastIndex());
     }
 
-
     @Override
     public Car searchCarId(String id) {
-        if (!repo.existsById(id)) {
+        if (!repo.existsById(id)){
             throw new RuntimeException("Wrong ID. Please enter Valid id..!");
         }
-        return mapper.map(repo.findById(id).get(), Car.class);
+        return mapper.map(repo.findById(id).get(),Car.class);
     }
 
     @Override

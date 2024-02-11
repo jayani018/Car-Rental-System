@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public interface DriverService {
     void saveDriver(DriverDTO dto);
     void updateDriver(DriverDTO dto);
-    void deleteDriver(String id);
+    void deleteDriver(String reg_ID);
     ArrayList<DriverDTO> getAllDriver();
-    CustomDTO userIdGenerate();
     ArrayList<DriverDTO> getAllAvalabileDriver();
+    CustomDTO userIdGenerate();
     CustomDTO getSumAvailableDriver();
     CustomDTO getSumUnavailableDriver();
     Driver searchDriverId(String id);

@@ -18,22 +18,23 @@ import java.util.ArrayList;
 @Transactional
 public class IncomeServiceImpl implements IncomeService {
     @Autowired
-    private IncomeRepo incomeRepo;
+    private IncomeRepo incomeService;
+
     @Autowired
     private ModelMapper mapper;
 
     @Override
     public ArrayList<IncomeDTO> dailyIncome() {
-        return new ArrayList<IncomeDTO>(incomeRepo.dailyIncome());
+        return new ArrayList<IncomeDTO>(incomeService.dailyIncome());
     }
 
     @Override
     public ArrayList<IncomeDTO> monthlyIncome() {
-        return new ArrayList<IncomeDTO>(incomeRepo.MonthlyIncome());
+        return new ArrayList<IncomeDTO>(incomeService.MonthlyIncome());
     }
 
     @Override
     public ArrayList<IncomeDTO> AnnuallyIncome() {
-        return new ArrayList<IncomeDTO>(incomeRepo.AnnuallyIncome());
+        return new ArrayList<IncomeDTO>(incomeService.AnnuallyIncome());
     }
 }

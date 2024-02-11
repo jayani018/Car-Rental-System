@@ -21,12 +21,15 @@ public class IncomeController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/dailyIncome")
-    public @ResponseBody ArrayList<IncomeDTO> dailyIncome() {
+    public @ResponseBody
+    ArrayList<IncomeDTO> dailyIncome() {
         return service.dailyIncome();
     }
+
     @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(path = "/monthlyIncome")
-    public @ResponseBody ArrayList<IncomeDTO> monthlyIncome() {
+    public @ResponseBody
+    ArrayList<IncomeDTO> monthlyIncome() {
         return service.monthlyIncome();
     }
 
@@ -35,6 +38,4 @@ public class IncomeController {
     public @ResponseBody ArrayList<IncomeDTO> AnnuallyIncome() {
         return service.AnnuallyIncome();
     }
-
-
 }

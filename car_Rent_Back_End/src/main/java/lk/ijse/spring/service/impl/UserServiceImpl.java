@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private ModelMapper mapper;
+
     @Override
     public ArrayList<UserDTO> getAllRegUsers() {
         return mapper.map(repo.findAll(), new TypeToken<ArrayList<UserDTO>>() {
@@ -32,5 +33,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getRegUsers(String username, String password) {
         return mapper.map(repo.findUserByUser_NameAndPassword(username, password), UserDTO.class);
+
     }
 }

@@ -1,4 +1,4 @@
-let carBaseUrl = "http://localhost:8081/Back_End_war/";
+let carBaseUrl = "http://localhost:8080/car_Rent_Back_End_war/";
 loadAllCars();
 
 $("#btnSaveCar").attr('disabled', true);
@@ -82,9 +82,8 @@ function setTextFieldValuesC(name, brand, type, front_View, back_View, side_View
     checkValidity(carValidations);
     $("#btnSaveCar").attr('disabled', true);
 }
-
 /**
- * load all customers Method
+ * load all Cars
  * */
 function loadAllCars() {
     $("#carTable").empty();
@@ -215,7 +214,6 @@ function blindClickEventsC() {
     });
     $("#btnSaveCar").attr('disabled', true);
 }
-
 $("#btnUpdateCar").click(function () {
     let formData = new FormData($("#carForm")[0]);
     console.log(formData);
@@ -308,7 +306,6 @@ carValidations.push({
 carValidations.push({
     reg: regExColor, field: $('#color'), error: 'Car Color Pattern is Wrong'
 });
-
 //disable tab key of all four text fields using grouping selector in CSS
 $("#name,#brand,#type,#number_Of_Passengers,#transmission_Type,#fuel_Type,#daily_Rate,#monthly_Rate,#price_Extra_KM,#registration_Number,#free_Mileage,#color").on('keydown', function (event) {
     if (event.key === "Tab") {
@@ -331,6 +328,7 @@ $("#name").on('keydown', function (event) {
         focusText($("#name"));
     }
 });
+
 
 $("#brand").on('keydown', function (event) {
     if (event.key === "Enter" && check(regExModel, $("#brand"))) {
@@ -387,7 +385,6 @@ $("#price_Extra_KM").on('keydown', function (event) {
         }
     }
 });
-
 $("#registration_Number").on('keydown', function (event) {
     if (event.key === "Enter" && check(regExRegNumber, $("#registration_Number"))) {
         if (event.which === 13) {
@@ -411,7 +408,6 @@ $("#color").on('keydown', function (event) {
         }
     }
 });
-
 
 function setButtonState(value) {
     if (value > 0) {

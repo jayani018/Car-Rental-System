@@ -1,7 +1,6 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.AdminDTO;
-import lk.ijse.spring.dto.UserRegiDTO;
 
 import java.util.ArrayList;
 
@@ -13,6 +12,6 @@ import java.util.ArrayList;
 public interface AdminService {
     void saveAdmin(AdminDTO dto);
     void updateAdmin(AdminDTO dto);
-    void deleteAdmin(String id);
+    void deleteAdmin(String reg_ID);
     ArrayList<AdminDTO> getAllAdmin();
 }
